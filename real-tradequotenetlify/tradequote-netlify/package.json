@@ -1,0 +1,15 @@
+{
+  "name": "tradequote",
+  "version": "1.0.0",
+  "description": "TradeQuote - AI job calculator (Netlify Functions edition).",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "netlify dev"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.32.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
