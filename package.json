@@ -6,7 +6,8 @@
   "type": "commonjs",
   "scripts": {
     "start": "node server.js",
-    "dev": "node server.js"
+    "dev": "node server.js",
+    "build": "echo \"No build step needed for TradeQuote\""
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.32.1",
