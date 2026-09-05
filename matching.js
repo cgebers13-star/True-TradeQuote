@@ -1,6 +1,12 @@
 // Handles Step 6 of the master prompt: turning (trade_category, location)
 // into real, filtered/sorted/matched tradesmen via Google Places, with a
 // clearly-labeled mock-data fallback when no API key is configured.
+//
+// FUTURE WORK: ranking currently uses Google's public rating + review count
+// (see the sort in liveSearch() below). The product plan is to eventually
+// weight or replace this with whether a tradesman has an active TradeQuote
+// subscription — that change belongs here (the qualifying/sort logic),
+// not in the callers (chat.js / estimate.js).
 
 const GOOGLE_KEY = process.env.GOOGLE_PLACES_API_KEY;
 

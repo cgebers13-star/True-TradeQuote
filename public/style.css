@@ -178,6 +178,34 @@ p { margin: 0 0 16px; color: var(--text-muted); }
 .site-footer { padding: 26px 0 40px; }
 .site-footer p { font-size: 12.5px; text-align: center; margin: 0; }
 
+/* Floating chat launcher */
+.chat-fab {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 18px 13px 15px;
+  border: none;
+  border-radius: 999px;
+  background: var(--navy);
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 10px 28px rgba(18, 33, 58, 0.28);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.chat-fab:hover { transform: translateY(-2px); box-shadow: 0 14px 32px rgba(18, 33, 58, 0.34); }
+.chat-fab-icon { font-size: 17px; line-height: 1; }
+
+@media (max-width: 860px) {
+  .chat-fab-label { display: none; }
+  .chat-fab { padding: 13px; }
+}
+
 /* Chat overlay */
 .chat-overlay {
   position: fixed;
@@ -306,10 +334,254 @@ p { margin: 0 0 16px; color: var(--text-muted); }
 }
 .chat-input-row input:focus { border-color: var(--amber); }
 
+/* Estimate page */
+.back-link {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+}
+.back-link:hover { color: var(--amber-dark); }
+
+.estimate-hero { padding: 52px 0 8px; text-align: center; }
+.estimate-hero h1 { font-size: 34px; letter-spacing: -0.4px; }
+.estimate-hero p { max-width: 480px; margin: 0 auto; font-size: 16px; }
+
+.estimate-wrap { padding: 28px 0 72px; }
+
+.estimate-card-outer {
+  max-width: 620px;
+  margin: 0 auto;
+  background: var(--card);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  padding: 36px;
+}
+
+.form-field { margin-bottom: 22px; }
+.form-field label {
+  display: block;
+  font-weight: 600;
+  font-size: 14.5px;
+  margin-bottom: 8px;
+  color: var(--navy);
+}
+.form-field .field-hint {
+  display: block;
+  font-weight: 400;
+  font-size: 12.5px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+.form-field textarea,
+.form-field input[type="text"] {
+  width: 100%;
+  padding: 13px 15px;
+  border-radius: 12px;
+  border: 1.5px solid var(--border);
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+  resize: vertical;
+  transition: border-color 0.12s ease;
+}
+.form-field textarea:focus,
+.form-field input[type="text"]:focus { border-color: var(--amber); }
+.form-field textarea { min-height: 96px; }
+
+.urgency-pills { display: flex; flex-wrap: wrap; gap: 10px; }
+.urgency-pill { position: relative; }
+.urgency-pill input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  cursor: pointer;
+}
+.urgency-pill span {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1.5px solid var(--border);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--navy-2);
+  transition: all 0.12s ease;
+}
+.urgency-pill input:checked + span {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: #fff;
+}
+.urgency-pill input:focus-visible + span { outline: 2px solid var(--amber); outline-offset: 2px; }
+
+.estimate-submit { width: 100%; padding: 16px; font-size: 16px; }
+.estimate-reassurance {
+  text-align: center;
+  font-size: 12.5px;
+  color: var(--text-muted);
+  margin: 14px 0 0;
+}
+
+.form-error {
+  background: #fdeaea;
+  border: 1px solid #f3c6c6;
+  color: #8a1f1f;
+  padding: 12px 15px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  margin-bottom: 18px;
+}
+
+.loading-state {
+  text-align: center;
+  padding: 40px 0;
+}
+.loading-spinner {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 3px solid var(--border);
+  border-top-color: var(--amber);
+  margin: 0 auto 16px;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.loading-state p { margin: 0; font-size: 14.5px; }
+
+/* Results */
+.safety-banner {
+  background: #fdeaea;
+  border: 1.5px solid #f0b3b3;
+  color: #7a1414;
+  padding: 16px 18px;
+  border-radius: 14px;
+  font-size: 14.5px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.demo-data-banner {
+  background: #fff4e0;
+  color: #8a5a12;
+  font-size: 13px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.results-header { text-align: center; margin-bottom: 26px; }
+.results-header .trade-badge {
+  display: inline-block;
+  background: #eef1f7;
+  color: var(--navy-2);
+  font-size: 12.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  padding: 5px 13px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+.results-header h2 { font-size: 24px; margin-bottom: 6px; }
+
+.cost-estimate-card {
+  background: var(--navy);
+  color: #fff;
+  border-radius: 18px;
+  padding: 28px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.cost-estimate-card .cost-label {
+  font-size: 12.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #9fb0d4;
+  margin-bottom: 8px;
+  display: block;
+}
+.cost-estimate-card .cost-range { font-size: 36px; font-weight: 800; margin-bottom: 10px; }
+.cost-estimate-card .cost-note { color: #c7cede; font-size: 13.5px; max-width: 460px; margin: 0 auto; }
+
+.matches-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+.match-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+.match-card .match-rank {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--amber);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.match-card h3 { font-size: 16.5px; margin-bottom: 6px; }
+.match-card .match-rating {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--navy-2);
+  margin-bottom: 8px;
+}
+.match-card .match-rating .stars { color: #e0a82c; }
+.match-card .match-meta {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+.match-card .match-specialty {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 14px;
+}
+.match-card .match-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.match-card .match-actions a {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  border: 1.5px solid var(--border);
+  color: var(--navy);
+}
+.match-card .match-actions a.primary { background: var(--amber); border-color: var(--amber); color: #fff; }
+
+.no-matches {
+  text-align: center;
+  padding: 30px 0;
+  color: var(--text-muted);
+}
+
+.results-footer {
+  text-align: center;
+  margin-top: 34px;
+  font-size: 13.5px;
+  color: var(--text-muted);
+}
+.results-footer a { color: var(--amber-dark); font-weight: 600; text-decoration: none; }
+
 @media (max-width: 860px) {
   .hero-inner { grid-template-columns: 1fr; }
   .hero-visual { order: -1; }
   .mock-chat-card { margin: 0 auto; }
   .steps-grid { grid-template-columns: 1fr; }
   .header-nav { display: none; }
+  .estimate-card-outer { padding: 24px; }
+  .cost-estimate-card .cost-range { font-size: 28px; }
 }

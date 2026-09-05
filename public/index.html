@@ -19,7 +19,7 @@
       <a href="#trades">Trades we cover</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <button class="btn btn-primary btn-small" id="headerCtaBtn">Get My Free Estimate</button>
+    <a class="btn btn-primary btn-small" href="estimate.html">Get My Free Estimate</a>
   </div>
 </header>
 
@@ -36,7 +36,7 @@
           roofing, and more.
         </p>
         <div class="hero-actions">
-          <button class="btn btn-primary btn-large" id="heroCtaBtn">Start My Estimate</button>
+          <a class="btn btn-primary btn-large" href="estimate.html">Start My Estimate</a>
           <span class="hero-microcopy">No account needed &middot; No sales calls</span>
         </div>
         <div class="trust-row">
@@ -76,7 +76,7 @@
         <div class="step-card">
           <div class="step-num">1</div>
           <h3>Describe the job</h3>
-          <p>Chat with TradeQuote about what's broken or what you want built — no forms, no jargon.</p>
+          <p>Fill out a quick 60-second form about what's broken or what you want built — no jargon, no waiting on hold.</p>
         </div>
         <div class="step-card">
           <div class="step-num">2</div>
@@ -111,7 +111,7 @@
         <h2>Get your estimate now</h2>
         <p>Takes about a minute. No account, no payment info, ever.</p>
       </div>
-      <button class="btn btn-primary btn-large" id="bandCtaBtn">Start My Estimate</button>
+      <a class="btn btn-primary btn-large" href="estimate.html">Start My Estimate</a>
     </div>
   </section>
 
@@ -139,6 +139,12 @@
     <p>TradeQuote is a scoping &amp; estimating assistant, not a licensed contractor. Estimates are non-binding.</p>
   </div>
 </footer>
+
+<!-- Floating chat launcher (secondary path — the form is the main CTA) -->
+<button id="chatFab" class="chat-fab" aria-label="Chat with TradeQuote">
+  <span class="chat-fab-icon">&#128172;</span>
+  <span class="chat-fab-label">Chat with us</span>
+</button>
 
 <!-- Chat panel -->
 <div id="chatOverlay" class="chat-overlay" aria-hidden="true">

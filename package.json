@@ -1,13 +1,18 @@
 {
   "name": "tradequote",
   "version": "1.0.0",
-  "description": "TradeQuote - AI job calculator (Netlify Functions edition).",
+  "description": "TradeQuote - AI job calculator that scopes home-service jobs, estimates cost, and matches homeowners to top-rated local tradesmen.",
+  "main": "server.js",
   "type": "commonjs",
   "scripts": {
-    "dev": "netlify dev"
+    "start": "node server.js",
+    "dev": "node server.js"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.32.1"
+    "@anthropic-ai/sdk": "^0.32.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1"
   },
   "engines": {
     "node": ">=18"

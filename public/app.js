@@ -11,7 +11,7 @@
   const demoBanner = document.getElementById('demoBanner');
   const statusEl = document.getElementById('chatStatus');
 
-  const openTriggers = ['headerCtaBtn', 'heroCtaBtn', 'bandCtaBtn']
+  const openTriggers = ['chatFab']
     .map((id) => document.getElementById(id))
     .filter(Boolean);
 

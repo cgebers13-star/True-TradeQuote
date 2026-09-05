@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Get My Free Estimate — TradeQuote</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html" style="text-decoration:none; color:inherit;">
+      <span class="logo-mark">TQ</span>
+      <span class="logo-text">TradeQuote</span>
+    </a>
+    <a class="back-link" href="index.html">&larr; Back to home</a>
+  </div>
+</header>
+
+<main>
+  <section class="estimate-hero">
+    <div class="container">
+      <span class="eyebrow">Free &middot; No obligation &middot; About 60 seconds</span>
+      <h1>Let's get you a ballpark and the right pro.</h1>
+      <p>Answer three quick questions and we'll estimate the cost and show you the top-rated local pros for the job.</p>
+    </div>
+  </section>
+
+  <section class="estimate-wrap">
+    <div class="container">
+      <div class="estimate-card-outer">
+
+        <!-- Form -->
+        <form id="estimateForm">
+          <div id="formError" class="form-error" hidden></div>
+
+          <div class="form-field">
+            <label for="jobInput">What's going on?</label>
+            <textarea
+              id="jobInput"
+              name="job"
+              placeholder="e.g. My water heater stopped making hot water, or I want to build a 12x14 deck"
+              required
+            ></textarea>
+            <span class="field-hint">Describe it in your own words — broken, new build, whatever fits.</span>
+          </div>
+
+          <div class="form-field">
+            <label for="locationInput">Where are you?</label>
+            <input
+              type="text"
+              id="locationInput"
+              name="location"
+              placeholder="City, State or ZIP code"
+              required
+            />
+            <span class="field-hint">So we can find pros near you. No street address needed.</span>
+          </div>
+
+          <div class="form-field">
+            <label for="urgencyGroup">How soon do you need this done?</label>
+            <div class="urgency-pills" id="urgencyGroup" role="radiogroup" aria-label="Urgency">
+              <label class="urgency-pill">
+                <input type="radio" name="urgency" value="asap" required />
+                <span>ASAP</span>
+              </label>
+              <label class="urgency-pill">
+                <input type="radio" name="urgency" value="week" />
+                <span>Within a few days</span>
+              </label>
+              <label class="urgency-pill">
+                <input type="radio" name="urgency" value="month" />
+                <span>Within a month</span>
+              </label>
+              <label class="urgency-pill">
+                <input type="radio" name="urgency" value="flexible" />
+                <span>Just exploring</span>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary estimate-submit" id="submitBtn">Get My Free Estimate</button>
+          <p class="estimate-reassurance">No account &middot; No payment info &middot; No spam</p>
+        </form>
+
+        <!-- Loading state -->
+        <div class="loading-state" id="loadingState" hidden>
+          <div class="loading-spinner"></div>
+          <p>Scoping your job and finding top-rated pros nearby...</p>
+        </div>
+
+        <!-- Results -->
+        <div id="resultsSection" hidden>
+          <div id="safetyWarning" class="safety-banner" hidden></div>
+          <div id="demoDataBanner" class="demo-data-banner" hidden>
+            Demo mode — connect a Google Places API key for live tradesmen matches.
+          </div>
+
+          <div class="results-header">
+            <span class="trade-badge" id="tradeBadge"></span>
+            <h2>Here's your estimate</h2>
+          </div>
+
+          <div class="cost-estimate-card">
+            <span class="cost-label">Rough, non-binding estimate</span>
+            <div class="cost-range" id="costRange"></div>
+            <p class="cost-note" id="costNote"></p>
+          </div>
+
+          <div id="matchesGrid" class="matches-grid"></div>
+          <div id="noMatches" class="no-matches" hidden>
+            We couldn't find qualifying pros near that location yet. Try a nearby city or a different ZIP.
+          </div>
+
+          <p class="results-footer">
+            This is a rough guide, not a quote — final pricing depends on an in-person look.
+            <br />
+            <a href="#" id="startOverLink">Start a new estimate</a>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>TradeQuote is a scoping &amp; estimating assistant, not a licensed contractor. Estimates are non-binding.</p>
+  </div>
+</footer>
+
+<script src="estimate.js"></script>
+</body>
+</html>
